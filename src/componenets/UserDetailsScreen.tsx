@@ -1,7 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
+import UseToggle from '../UseToggle'
 
-export default class UserDetailsScreen extends Component {
-  render() {
-    return <div>User Details</div>
-  }
+const UserDetailsScreen = () => {
+  const [isVisible, toggleVisible] = UseToggle(false)
+  return (
+    <div>
+      custome hook example
+      <button onClick={toggleVisible}> hello </button>
+      {isVisible && <h1>World !</h1>}
+    </div>
+  )
 }
+
+export default UserDetailsScreen
